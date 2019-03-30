@@ -1,0 +1,180 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: Hexo
+subtitle:
+description:
+author: Lovae
+language:
+timezone:
+
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: https://littlechao.top
+root: /
+permalink: :title.html
+permalink_defaults:
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link: true # Open external links in new tab
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace:
+
+archive_generator:
+  per_page: 0
+  yearly: true
+  monthly: true
+# Home page setting
+# path: Root path for your blogs index page. (default = '')
+# per_page: Posts displayed per page. (0 = disable pagination)
+# order_by: Posts order. (Order by date descending by default)
+index_generator:
+  path: ''
+  per_page: 15
+  order_by: -date
+  
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+
+# Pagination
+## Set per_page to 0 to disable pagination
+page:
+  per_page: 15
+  pagination_dir: page
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: skapp
+
+local_search:
+  enable: true
+  # if auto, trigger search by changing input
+  # if manual, trigger search by pressing enter key or search button
+  trigger: auto
+  # show top n results per article, show all results by setting to -1
+  top_n_per_article: 1
+
+
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repo:
+    #github: https://github.com/ShiChao1996/ShiChao1996.github.io.git
+    server: git@140.143.251.91:/git/blog.git
+  branch: master
+
+#=================
+# Sass
+node_sass:
+  outputStyle: nested
+  precision: 5
+  sourceComments: false
+
+# Autoprefixer
+autoprefixer:
+  exclude:
+    - '*.min.css'
+  browsers:
+    - 'last 2 versions'
+
+# Lunr
+lunr:
+  field: all
+  fulltext: false
+  path: assets/lunr/
+
+# filter_cleanup
+hfc_useref:
+  enable: true
+  concat: true
+
+hfc_html:
+  enable: true
+  exclude:
+
+hfc_css:
+  enable: true
+  exclude:
+    - '*.min.css'
+
+hfc_js:
+  enable: true
+  mangle: true
+  exclude:
+    - '*.min.js'
+
+hfc_img:
+  enable: false
+  interlaced: false
+  multipass: false
+  optimizationLevel: 2
+  pngquant: false
+  progressive: false
+
+hfc_favicons:
+  enable: false
+  src: img/blog-logo.png
+  target: img/
+  icons:
+    android: true
+    appleIcon: true
+    appleStartup: false
+    coast: false
+    favicons: true
+    firefox: false
+    opengraph: false
+    windows: true
+    yandex: false
+
+# cartoon
+live2d:
+  enable: true
+  scriptFrom: local
+  pluginRootPath: live2dw/
+  pluginJsPath: lib/
+  pluginModelPath: assets/
+  model:
+    use: live2d-widget-model-wanko
+    scale: 0.8
+  display:
+    position: right
+    width: 100
+    height: 200
+    vOffset: -100
+    hOffset: 30
+  mobile:
+    show: true
